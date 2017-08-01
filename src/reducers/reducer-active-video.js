@@ -3,6 +3,8 @@ export default function (state = {},action){
     case "Video_selected":
         return action.data;
     break;
+    default :
+    return '';
   }
   return state;
 }

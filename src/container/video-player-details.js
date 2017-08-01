@@ -1,41 +1,28 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
 import ReactPlayer from 'react-player';
-import Audio from 'react-audioplayer';
-
-
+import {Button} from 'react-bootstrap';
 
 class VideoPlayer extends Component {
 
 
     render() {
 
-
-
-      if(this.props.video.type == 'video'){
+      if(this.props.video.type === 'video'){
         return (
             <div>
           <h2>{this.props.video.title}</h2>
           <br/>
           <ReactPlayer url={this.props.video.src} playing />
+          <br />
+          <Button bsStyle="primary">Pre</Button>
+          <Button bsStyle="primary">Next</Button>
           </div>
         );
-        }else if(this.props.video.type == 'audio'){
-
-          const songObj = {
-            name: this.props.video.title, // song name
-            src: this.props.video.src, // song source address
-            img: '', // (optional) song image source address
-            comments: '' // (optional) comments to display of that song
-          }
+      }else if(this.props.video.type === 'audio'){
           return(
           <div>
-          <Audio
-          width={600}
-          height={400}
-          autoPlay={true}
-          playlist={songObj}
-              />
+          <ReactPlayer url={this.props.video.src} playing />
           </div>
         );
         }else {

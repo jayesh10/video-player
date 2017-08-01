@@ -2,30 +2,32 @@ import React,{Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {selectVideo} from '../actions/video';
+import {ListGroup,ListGroupItem} from 'react-bootstrap';
+
 
 class VideoList extends Component {
-
 
 
   VideoListItem(){
     return this.props.video.map((video) => {
       return(
-          <li
-          key = {video.id}
-          onClick ={() => this.props.selectVideo(video)}
-          >
-          {video.title}
-          </li>
+
+        <ListGroupItem key = {video.id}
+          onClick ={() => this.props.selectVideo(video)} >  {video.title}
+        </ListGroupItem>
+
       );
     });
   }
 
     render() {
-        return (
-          <ul>
-            {this.VideoListItem()}
-          </ul>
-        );
+      return (
+      <div>
+      <ListGroup>
+        {this.VideoListItem()}
+        </ListGroup>
+      </div>
+    );
     }
 }
 
