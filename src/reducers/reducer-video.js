@@ -21,12 +21,5 @@ export default function(){
         type:'video',
         src:'https://vimeo.com/219041479'
       },
-      {
-        id : 4,
-        title:'lil-pump-molly-prod-bighead-ronny-j-1',
-        source:'soundcloud',
-        type:'audio',
-        src:'https://soundcloud.com/wavey-hefner/lil-pump-molly-prod-bighead-ronny-j-1'
-      },
     ]
 }

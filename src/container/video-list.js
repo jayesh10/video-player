@@ -15,7 +15,7 @@ class VideoList extends Component {
 
       return(
         <ListGroupItem key={i}
-          onClick ={() => this.props.selectVideo(video,i)} >  {video.title}
+          onClick ={() => this.props.selectVideo(i)} >  {video.title}
         </ListGroupItem>
 
       );
@@ -27,8 +27,7 @@ class VideoList extends Component {
       <div>
       <ListGroup>
         {this.VideoListItem()}
-        <Button bsStyle="primary" >Pre</Button>
-        <Button bsStyle="primary">Next</Button>
+      
         </ListGroup>
       </div>
     );
