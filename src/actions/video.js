@@ -1,7 +1,8 @@
-export  const selectVideo = (video) =>{
+export  const selectVideo = (video,i) =>{
   return {
     type:"Video_selected",
-    data : video
+    data : video,
+    index:i
 
   }
 };

@@ -5,8 +5,8 @@ import {Button} from 'react-bootstrap';
 
 class VideoPlayer extends Component {
 
-
     render() {
+
 
       if(this.props.video.type === 'video'){
         return (
@@ -37,9 +37,16 @@ class VideoPlayer extends Component {
 }
 
 function mapStateToProps(state){
+  if(state.activeVideo != '')
+  {
+    var  index = state.activeVideo;
+   }else{
+     index = 0;
+   }
   return {
-    video:state.activeVideo,
-    audio:state.activeVideo
+
+
+    video:state.video[index]
   }
 }
 

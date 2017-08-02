@@ -15,9 +15,6 @@ const store = createStore(allReducers,
   )
 );
 
-ReactDOM.render(
-  <Provider store = {store}>
-  <App />
-  </Provider>
+ReactDOM.render(<Provider store = {store}><App /></Provider>
   , document.getElementById('root'));
 registerServiceWorker();

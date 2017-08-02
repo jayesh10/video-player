@@ -8,18 +8,20 @@ const app = () =>(
   <Grid>
     <Row className="show-grid">
       <Col xs={8} md={4}>
-      <div>
-      <h2>Video list</h2>
-      <br />
-      <br />
-      <VideoList />
-      </div></Col>
-      <Col xs={6} md={8}><div>
-      <h2>Video :</h2>
-      <VideoPlayer />
-      </div></Col>
+          <div>
+              <h2>Video list</h2>
+                <br /><br />
+                  <VideoList />
+          </div>
+      </Col>
+      <Col xs={6} md={8}>
+        <div>
+          <h2>Video :</h2>
+            <VideoPlayer />
+        </div>
+        </Col>
     </Row>
-    </Grid>
+  </Grid>
 );
 
 

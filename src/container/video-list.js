@@ -3,17 +3,19 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {selectVideo} from '../actions/video';
 import {ListGroup,ListGroupItem} from 'react-bootstrap';
+import {Button} from 'react-bootstrap';
 
 
 class VideoList extends Component {
 
 
   VideoListItem(){
-    return this.props.video.map((video) => {
-      return(
+    console.log(this.props.video);
+    return this.props.video.map((video,i) => {
 
-        <ListGroupItem key = {video.id}
-          onClick ={() => this.props.selectVideo(video)} >  {video.title}
+      return(
+        <ListGroupItem key={i}
+          onClick ={() => this.props.selectVideo(video,i)} >  {video.title}
         </ListGroupItem>
 
       );
@@ -25,6 +27,8 @@ class VideoList extends Component {
       <div>
       <ListGroup>
         {this.VideoListItem()}
+        <Button bsStyle="primary" >Pre</Button>
+        <Button bsStyle="primary">Next</Button>
         </ListGroup>
       </div>
     );
@@ -32,7 +36,9 @@ class VideoList extends Component {
 }
 
 function mapStateToProps(state) {
+  console.log(state);
   return{
+
     video:state.video
   }
 }
